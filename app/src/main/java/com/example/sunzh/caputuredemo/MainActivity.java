@@ -2,6 +2,7 @@ package com.example.sunzh.caputuredemo;
 
 import android.content.Context;
 import android.content.res.Configuration;
+import android.hardware.Camera;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
@@ -15,6 +16,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+//        addCaptureBtn();
+
+        getCamera();
+    }
+
+    private Camera getCamera() {
+        Camera camera = null;
+        try {
+            camera = Camera.open();
+        } catch (Exception e) {
+            camera = null;
+        }
+        return camera;
+    }
+
+    private void addCaptureBtn() {
         //get width
         WindowManager manager = (WindowManager) getSystemService(Context.WINDOW_SERVICE);
         DisplayMetrics outMetrics = new DisplayMetrics();
