@@ -3,6 +3,7 @@ package com.example.audiorecorder;
 import android.content.Intent;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
@@ -57,6 +58,8 @@ public class CameraActivity extends AppCompatActivity {
                 //获取图片bitmap
 //                Log.i("JCameraView", "bitmap = " + bitmap.getWidth());
                 String path = FileUtil.saveBitmap("JCamera", bitmap);
+                //通知系统更新相册
+                CameraActivity.this.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(path))));
                 Intent intent = new Intent();
                 intent.putExtra("path", path);
                 setResult(101, intent);
@@ -65,6 +68,8 @@ public class CameraActivity extends AppCompatActivity {
 
             @Override
             public void recordSuccess(String url, Bitmap firstFrame) {
+                //通知系统更新相册
+                CameraActivity.this.sendBroadcast(new Intent(Intent.ACTION_MEDIA_SCANNER_SCAN_FILE, Uri.fromFile(new File(url))));
                 //获取视频路径
                 String path = FileUtil.saveBitmap("JCamera", firstFrame);
                 Log.i("CJT", "url = " + url + ", Bitmap = " + path);

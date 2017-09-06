@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     /**
-     * 获取权限
+     * 获取权限，打开拍摄短视频页面
      */
     private void getPermissions() {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
