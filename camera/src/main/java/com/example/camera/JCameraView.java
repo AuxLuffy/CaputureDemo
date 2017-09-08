@@ -29,6 +29,7 @@ import com.example.camera.lisenter.FirstFoucsLisenter;
 import com.example.camera.lisenter.JCameraLisenter;
 import com.example.camera.lisenter.ReturnLisenter;
 import com.example.camera.lisenter.TypeLisenter;
+import com.example.camera.util.AudioUtil;
 
 import java.io.File;
 import java.io.IOException;
@@ -252,6 +253,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CamOpenO
                 postDelayed(new Runnable() {
                     @Override
                     public void run() {
+                        AudioUtil.openPhoneVol(mContext);
                         CameraInterface.getInstance().stopRecord(true, new
                                 CameraInterface.StopRecordCallback() {
                                     @Override
@@ -278,6 +280,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CamOpenO
                 isBorrow = true;
                 CAMERA_STATE = STATE_RUNNING;
                 mFoucsView.setVisibility(INVISIBLE);
+                AudioUtil.mutePhone(mContext);
                 CameraInterface.getInstance().startRecord(mVideoView.getHolder().getSurface(), new CameraInterface
                         .ErrorCallback() {
                     @Override
@@ -293,6 +296,7 @@ public class JCameraView extends FrameLayout implements CameraInterface.CamOpenO
 
             @Override
             public void recordEnd(long time) {
+                AudioUtil.openPhoneVol(mContext);
                 CameraInterface.getInstance().stopRecord(false, new CameraInterface.StopRecordCallback() {
                     @Override
                     public void recordResult(final String url, Bitmap firstFrame) {

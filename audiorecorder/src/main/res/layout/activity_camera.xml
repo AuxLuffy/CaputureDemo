@@ -12,19 +12,19 @@
         app:iconMargin="20dp"
         app:iconSize="30dp"
         app:iconSrc="@drawable/ic_camera_enhance_black_24dp"/>
-    <!--<RelativeLayout-->
+    <!--<LinearLayout-->
         <!--android:id="@+id/guide_blur"-->
         <!--android:visibility="visible"-->
         <!--android:background="#80000000"-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent">-->
 
-        <!--<ImageView-->
-            <!--android:layout_width="50dp"-->
-            <!--android:layout_height="50dp"-->
-            <!--android:layout_centerHorizontal="true"-->
-            <!--android:layout_alignParentBottom="true"-->
-            <!--android:layout_marginBottom="10dp"-->
-            <!--android:src="@drawable/ic_camera_enhance_black_24dp"/>-->
-    <!--</RelativeLayout>-->
+
+        <!--<com.example.sunzh.caputuredemo.CaptureImg-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_gravity="bottom|center_horizontal"-->
+            <!--android:onClick="gotoCamera"-->
+            <!--android:layout_marginBottom="50dp" />-->
+    <!--</LinearLayout>-->
 </FrameLayout>
