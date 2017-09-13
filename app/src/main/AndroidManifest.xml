@@ -26,8 +26,9 @@
             </intent-filter>
         </activity>
         <activity android:name=".CameraActivity" />
-        <activity android:name=".PhotoActivity"></activity>
-        <activity android:name=".surfacedemo.TestSurfaceViewActivity"/>
+        <activity android:name=".PhotoActivity" />
+        <activity android:name=".surfacedemo.TestSurfaceViewActivity" />
+        <activity android:name=".surfacedemo.VideoPlayerActivity"></activity>
     </application>
 
 </manifest>

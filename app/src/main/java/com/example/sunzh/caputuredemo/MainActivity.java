@@ -22,6 +22,8 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
+import com.example.sunzh.caputuredemo.surfacedemo.VideoPlayerActivity;
+
 public class MainActivity extends AppCompatActivity {
 
     private static final int GET_PERMISSION_REQUEST = 101;
@@ -50,7 +52,8 @@ public class MainActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(MainActivity.this, "scaleDensity: " + getResources().getDisplayMetrics().scaledDensity + ", density: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MainActivity.this, "scaleDensity: " + getResources().getDisplayMetrics().scaledDensity + ", density: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
+                startActivity(new Intent(MainActivity.this, VideoPlayerActivity.class));
 //                startActivity(new Intent(MainActivity.this, TestSurfaceViewActivity.class));
             }
         });
