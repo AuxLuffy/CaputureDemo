@@ -15,8 +15,11 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.DisplayMetrics;
 import android.view.Gravity;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.FrameLayout;
+import android.widget.RelativeLayout;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,6 +32,28 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 //        addCaptureBtn();
         getCamera();
+        addButton();
+    }
+
+    private void addButton() {
+        RelativeLayout rootview = (RelativeLayout) findViewById(R.id.rootview);
+        View childAt = rootview.getChildAt(0);
+        Button button = new Button(this);
+        RelativeLayout.LayoutParams layoutParams = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+        layoutParams.addRule(RelativeLayout.CENTER_HORIZONTAL, RelativeLayout.TRUE);
+//        layoutParams.addRule(RelativeLayout.ALIGN_PARENT_BOTTOM, RelativeLayout.TRUE);
+        layoutParams.addRule(RelativeLayout.ABOVE, R.id.capturebtn);
+        layoutParams.bottomMargin = 20;
+        button.setText("SurfaceDemo");
+        button.setLayoutParams(layoutParams);
+        rootview.addView(button);
+        button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(MainActivity.this, "scaleDensity: " + getResources().getDisplayMetrics().scaledDensity + ", density: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
+//                startActivity(new Intent(MainActivity.this, TestSurfaceViewActivity.class));
+            }
+        });
     }
 
     public void gotoCamera(View v) {
@@ -108,7 +133,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        FrameLayout rootview = (FrameLayout) findViewById(R.id.rootview);
+        RelativeLayout rootview = (RelativeLayout) findViewById(R.id.rootview);
         rootview.addView(btn_capture);
     }
 
