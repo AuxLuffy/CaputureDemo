@@ -14,7 +14,6 @@ app/src/test/
 homedeliverydao/libs/
 .idea/
 .gitignore
-app/
 build.gradle
 gradle.properties
 gradle/

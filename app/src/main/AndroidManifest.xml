@@ -28,7 +28,19 @@
         <activity android:name=".CameraActivity" />
         <activity android:name=".PhotoActivity" />
         <activity android:name=".surfacedemo.TestSurfaceViewActivity" />
-        <activity android:name=".surfacedemo.VideoPlayerActivity"></activity>
+        <activity android:name=".surfacedemo.VideoPlayerActivity" />
+        <activity
+            android:name=".xfermodetest.XfermodeTestActivity"
+            android:theme="@style/AppTheme.NoBar" />
+        <activity android:name=".surfacedemo.VideoViewActivity" />
+        <activity android:name=".passwordinput.PayPsdInputViewAcitvity"
+            android:windowSoftInputMode="adjustPan|stateVisible" >
+            <!--<intent-filter>-->
+                <!--<action android:name="android.intent.action.MAIN" />-->
+
+                <!--<category android:name="android.intent.category.LAUNCHER" />-->
+            <!--</intent-filter>-->
+        </activity>
     </application>
 
 </manifest>

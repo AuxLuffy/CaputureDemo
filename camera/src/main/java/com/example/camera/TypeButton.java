@@ -42,8 +42,8 @@ public class TypeButton extends View {
 
         mPaint = new Paint();
         path = new Path();
-        strokeWidth = size / 50f;
-        index = button_size / 12f;
+        strokeWidth = size / 45f;
+        index = button_size / 10f;
         rectF = new RectF(center_X, center_Y - index, center_X + index * 2, center_Y + index);
     }
 
@@ -67,17 +67,17 @@ public class TypeButton extends View {
             mPaint.setStyle(Paint.Style.STROKE);
             mPaint.setStrokeWidth(strokeWidth);
 
-            path.moveTo(center_X - index / 7, center_Y + index);
+            path.moveTo((float) (center_X - index), center_Y + index);
             path.lineTo(center_X + index, center_Y + index);
 
             path.arcTo(rectF, 90, -180);
-            path.lineTo(center_X - index, center_Y - index);
+            path.lineTo((float) (center_X - index*0.6), center_Y - index);
             canvas.drawPath(path, mPaint);
             mPaint.setStyle(Paint.Style.FILL);
             path.reset();
-            path.moveTo(center_X - index, (float) (center_Y - index * 1.5));
-            path.lineTo(center_X - index, (float) (center_Y - index / 2.3));
-            path.lineTo((float) (center_X - index * 1.6), center_Y - index);
+            path.moveTo((float) (center_X - index*0.2), (float) (center_Y - index * 1.5));
+            path.lineTo((float) (center_X - index*0.2), (float) (center_Y - index / 2.3));
+            path.lineTo((float) (center_X - index * 1.2), center_Y - index);
             path.close();
             canvas.drawPath(path, mPaint);
 
@@ -90,7 +90,7 @@ public class TypeButton extends View {
             canvas.drawCircle(center_X, center_Y, button_radius, mPaint);
             mPaint.setAntiAlias(true);
             mPaint.setStyle(Paint.Style.STROKE);
-            mPaint.setColor(0xFF00CC00);
+            mPaint.setColor(0xFF34A4FF);
             mPaint.setStrokeWidth(strokeWidth);
 
             path.moveTo(center_X - button_size / 6f, center_Y);

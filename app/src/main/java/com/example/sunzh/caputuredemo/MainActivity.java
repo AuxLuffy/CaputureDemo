@@ -22,7 +22,7 @@ import android.widget.FrameLayout;
 import android.widget.RelativeLayout;
 import android.widget.Toast;
 
-import com.example.sunzh.caputuredemo.surfacedemo.VideoPlayerActivity;
+import com.example.sunzh.caputuredemo.passwordinput.PayPsdInputViewAcitvity;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -53,7 +53,9 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
 //                Toast.makeText(MainActivity.this, "scaleDensity: " + getResources().getDisplayMetrics().scaledDensity + ", density: " + getResources().getDisplayMetrics().density, Toast.LENGTH_SHORT).show();
-                startActivity(new Intent(MainActivity.this, VideoPlayerActivity.class));
+//                startActivity(new Intent(MainActivity.this, VideoPlayerActivity.class));
+//                startActivity(new Intent(MainActivity.this, XfermodeTestActivity.class));
+                startActivity(new Intent(MainActivity.this, PayPsdInputViewAcitvity.class));
 //                startActivity(new Intent(MainActivity.this, TestSurfaceViewActivity.class));
             }
         });

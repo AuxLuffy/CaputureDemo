@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="PayPsdInputView">
+        <attr name="maxCount" format="integer" />
+        <attr name="circleColor" format="color|reference" />
+        <attr name="bottomLineColor" format="color|reference" />
+        <attr name="radius" format="dimension" />
+        <attr name="divideLineWidth" format="dimension" />
+        <attr name="divideLineColor" format="reference|color" />
+        <attr name="psdType">
+            <enum name="wechat" value="0" />
+            <enum name="bottomline" value="1" />
+        </attr>
+        <attr name="rectAngle" format="dimension" />
+        <attr name="focusedColor" format="reference|color" />
+        <attr name="borderColor" format="reference|color" />
+        <attr name="android:layout_width" />
+        <attr name="android:layout_height" />
+    </declare-styleable>
+</resources>
